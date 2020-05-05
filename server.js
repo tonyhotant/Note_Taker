@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 let notes = require("./db/db.json");
 
 //create express server
@@ -37,7 +38,7 @@ function apiRoute() {
         return res.json(notes[i]);
       }
     }
-    console.log("note not founded");
+    console.log("selected note not founded");
     return res.json(false);
   });
 
@@ -45,13 +46,11 @@ function apiRoute() {
   app.post("/api/notes", function (req, res) {
     const newNotes = req.body;
 
+    newNotes.id = uuidv4();
     notes.push(newNotes);
 
-    newNotes.id = notes.indexOf(newNotes);
-
     writeToDB(notes);
-
-    res.json(newNotes);
+    return res.json(newNotes);
   });
 
   // delete selected note
@@ -60,12 +59,12 @@ function apiRoute() {
 
     for (let i = 0; i < notes.length; i++) {
       if (chosen == notes[i].id) {
-        newNotes = notes.slice(i);
-        writeToDB(newNotes);
+        notes.splice(i, 1);
+        writeToDB(notes);
         return res.json(notes);
       }
     }
-    console.log("note not founded");
+    console.log("delete note not founded");
     return res.json(false);
   });
 }
