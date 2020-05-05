@@ -1,31 +1,59 @@
-# Unit 11 Express Homework: Note Taker
+
+# Note_Taker
+
+![GitHub top language](https://img.shields.io/github/languages/top/tonyhotant/Note_Taker)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
 ## Description
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+An application can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
 
-* The application frontend has already been created, it's your job to build the backend and connect the two.
+## Table of Contents
 
-* The following HTML routes should be created:
+* *[Title](#Title)*
+* *[Description](#Description)*
+* *[Installation](#installation)*
+* *[Usage](#Usage)*
+* *[License](#License)*
+* *[Contributing](#Contributing)*
+* *[Tests](#Tests)*
+* *[Questions](#Questions)*
 
-  * GET `/notes` - Should return the `notes.html` file.
+## Installation
 
-  * GET `*` - Should return the `index.html` file
+To install necessary dependencies, run the following command:
 
-* The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
+```sh
+npm install
+```
 
-* The following API routes should be created:
+## Usage
 
-  * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
+To use the README generator, run the following command:
 
-  * POST `/api/notes` - Should recieve a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
+```sh
+npm start
+```
 
-  * DELETE `/api/notes/:id` - Should recieve a query paramter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+## License
 
-## User Story
+This project is licensed under the MIT license.
 
-AS A user, I want to be able to write and save notes
+## Contributing
 
-I WANT to be able to delete notes I've written before
+Contributor Covenant v2.0
 
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
+## Tests
+
+To run the tests, run the following command:
+
+```sh
+to be done
+```
+
+## Questions
+
+<img src="https://avatars1.githubusercontent.com/u/32546592?v=4" alt="avatar" style="border-radius: 16px" width="50" />
+
+If you have any questions about the repo, open an issue in [Note_Taker](https://github.com/tonyhotant/Note_Taker) 
+or contact directly at <lishengyu1986@gmail.com>.
