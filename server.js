@@ -5,7 +5,7 @@ let notes = require("./db/db.json");
 
 //create express server
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const OUTPUT_DIR = path.resolve(__dirname, "db");
 const outputPath = path.join(OUTPUT_DIR, "db.json");
